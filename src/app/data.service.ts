@@ -4,13 +4,25 @@ import { UserMessage } from './user-message';
 
 @Injectable()
 export class DataService {
+
+  apiUsers = "http://localhost:3000/users";
+  apiUserMessage = "http://localhost:3000/userMessage";
+
+
   constructor(private http: HttpClient) {}
 
   getUsers() {
-    return this.http.get("http://localhost:3000/users");
+    return this.http.get(this.apiUsers);
+  }
+
+
+
+  getUserMessage(){
+    return this.http.get<any[]>(this.apiUserMessage);
   }
 
   addUserMessage(UserMessage){
-    return this.http.post("http://localhost:3000/userMessage",UserMessage);
+    return this.http.post(this.apiUserMessage,UserMessage);
   }
+
 }

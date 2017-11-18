@@ -1,17 +1,48 @@
 <div class="container">
   <section>
     <h1>Input</h1>
-    <img [src]="">
-    <select class="form-control" (change)="selectUser($event.target.value)">
-      <option value="">--Select--</option>
-      <option *ngFor="let user of users" [value]="user.id">{{ user.name}}</option>
-    </select>
 
-    <input type="text" placeholder="你想說什麼？" [(ngModel)]="content" (keyup.enter)="addMessage()">
+    <div class="card">
 
-    <ul>
-      <li *ngFor="let item of userMessages">{{item.message}}</li>
-    </ul>
+      <div id="new-message">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <select class="form-control" (change)="selectUser($event.target.value)">
+              <option value="">--Select--</option>
+              <option *ngFor="let user of users" [value]="user.id">{{ user.name}}</option>
+            </select>
+          </span>
+
+          <input type="text" class="form-control" placeholder="發生了什麼事?" [(ngModel)]="content" (keyup.enter)="addMessage()">
+        </div>
+      </div>
+
+      <ul id="feed" class="list-unstyled">
+        <li *ngFor="let item of userMessages">
+
+          <img class="rounded-circle feed-avatar" [src]="item.imageUrl">
+          <div class="feed-post">
+            <h5>{{item.dateTime | date:'yyyy-MM-dd HH:mm'}}</h5>
+            <p>{{item.message}}</p>
+          </div>
+          <div class="action-list">
+            <a href="#" data-toggle="tooltip" data-placement="bottom" title="回覆">
+              <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+              <span class="retweet-count">107</span>
+            </a>
+            <a href="#" data-toggle="tooltip" data-placement="bottom" title="轉推">
+              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+              <span class="retweet-count">66</span>
+            </a>
+            <a href="#" data-toggle="tooltip" data-placement="bottom" title="棒">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              <span class="retweet-count">203</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
   </section>
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "./data.service";
-import { UserMessage } from './user-message';
+import { UserMessage } from "./user-message";
+import { getLocaleDateFormat } from "@angular/common/src/i18n/locale_data_api";
 
 @Component({
   selector: "app-root",
@@ -12,8 +13,8 @@ export class AppComponent implements OnInit {
   userMessages: any[] = [];
   users;
   user = {
-    userId:'',
-    imageUrl:''
+    userId: "",
+    imageUrl: ""
   };
 
   constructor(private dataSer: DataService) {}
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     //取得人員名單
     this.dataSer.getUsers().subscribe(req => (this.users = req));
+    this.dataSer.getUserMessage().subscribe(data => (this.userMessages = data));
   }
 
   //加入訊息
@@ -29,13 +31,20 @@ export class AppComponent implements OnInit {
     if (this.content) {
       let userMessage: UserMessage = {
         userId: this.user.userId,
-        message: this.content
+        imageUrl: this.user.imageUrl,
+        message: this.content,
+        dateTime: Date().toString()
       };
 
-      console.log(userMessage.userId + ':::' + userMessage.message);
+      console.log(
+        userMessage.userId +
+          ":::" +
+          userMessage.message +
+          ":::" +
+          userMessage.dateTime
+      );
 
-      this.dataSer.addUserMessage(userMessage)
-      .subscribe(data => {
+      this.dataSer.addUserMessage(userMessage).subscribe(data => {
         this.userMessages = this.userMessages.concat(data);
         this.content = "";
       });
@@ -44,9 +53,8 @@ export class AppComponent implements OnInit {
 
   selectUser($event) {
     console.log($event);
-    this.user.userId = this.users[$event].userId; //userId
-    this.user.imageUrl = this.users[$event].imageUrl; //imageUrl
-
-
+    var index = $event - 1;
+    this.user.userId = this.users[index].id; //userId
+    this.user.imageUrl = this.users[index].imageUrl; //imageUrl
   }
 }

@@ -1,4 +1,6 @@
 export interface UserMessage {
-  userId:number;
+  userId:string;
+  imageUrl:string;
   message:string;
+  dateTime:string
 }
