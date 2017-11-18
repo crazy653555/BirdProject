@@ -1,11 +1,19 @@
 <div class="container">
   <section>
     <h1>Input</h1>
+    <img [src]="">
     <select class="form-control" (change)="selectUser($event.target.value)">
       <option value="">--Select--</option>
-      <option *ngFor="let user of users" [value]="user.id">{{ user.name }}({{user.id}})</option>
+      <option *ngFor="let user of users" [value]="user.id">{{ user.name}}</option>
     </select>
 
     <input type="text" placeholder="你想說什麼？" [(ngModel)]="content" (keyup.enter)="addMessage()">
+
+    <ul>
+      <li *ngFor="let item of userMessages">{{item.message}}</li>
+    </ul>
   </section>
+
+
+
 </div>

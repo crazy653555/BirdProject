@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "avdelilahwongon",
+      "imageUrl": "./assets/img/delilahwong-ig.png"
+    },
+    {
+      "id": 2,
+      "name": "eason",
+      "imageUrl": "/assets/img/eason-ig.png"
+    },
+    {
+      "id": 3,
+      "name": "yanlinchou",
+      "imageUrl": "/assets/img/yanlinchou-ig.png"
+    }
+  ],
+  "userMessage": [
+    {
+      "userId": "1",
+      "message": "faffeaf",
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "message": "faf",
+      "id": 2
+    },
+    {
+      "message": "df",
+      "id": 3
+    },
+    {
+      "message": "大雞排",
+      "id": 4
+    },
+    {
+      "message": "fafa",
+      "id": 5
+    }
+  ]
+}

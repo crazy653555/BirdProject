@@ -1,40 +1,52 @@
-import { Component } from "@angular/core";
-import { Message } from "./message";
+import { Component, OnInit } from "@angular/core";
+import { DataService } from "./data.service";
+import { UserMessage } from './user-message';
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   content = "";
-  messages: any[] = [];
-  users = [
-    { id: 1, name: "avon" },
-    { id: 2, name: "eason" },
-    { id: 3, name: "mary" }
-  ];
+  userMessages: any[] = [];
+  users;
+  user = {
+    userId:'',
+    imageUrl:''
+  };
 
-  user;
+  constructor(private dataSer: DataService) {}
 
-
+  ngOnInit(): void {
+    //取得人員名單
+    this.dataSer.getUsers().subscribe(req => (this.users = req));
+  }
 
   //加入訊息
   addMessage() {
     //如果有值
     if (this.content) {
-      let newMessage: Message = {
+      let userMessage: UserMessage = {
+        userId: this.user.userId,
         message: this.content
       };
 
-      this.messages.push(newMessage);
-      this.content = "";
+      console.log(userMessage.userId + ':::' + userMessage.message);
+
+      this.dataSer.addUserMessage(userMessage)
+      .subscribe(data => {
+        this.userMessages = this.userMessages.concat(data);
+        this.content = "";
+      });
     }
   }
 
-  selectUser($event){
-    console.log('selectUser()');
-
+  selectUser($event) {
     console.log($event);
+    this.user.userId = this.users[$event].userId; //userId
+    this.user.imageUrl = this.users[$event].imageUrl; //imageUrl
+
+
   }
 }
