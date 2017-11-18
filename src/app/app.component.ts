@@ -9,11 +9,12 @@ import { getLocaleDateFormat } from "@angular/common/src/i18n/locale_data_api";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  content = "";
+  message = "";
   userMessages: any[] = [];
   users;
   user = {
     userId: "",
+    userName:"",
     imageUrl: ""
   };
 
@@ -28,33 +29,26 @@ export class AppComponent implements OnInit {
   //加入訊息
   addMessage() {
     //如果有值
-    if (this.content) {
+    if (this.message) {
       let userMessage: UserMessage = {
         userId: this.user.userId,
+        userName:this.user.userName,
         imageUrl: this.user.imageUrl,
-        message: this.content,
+        message: this.message,
         dateTime: Date().toString()
       };
 
-      console.log(
-        userMessage.userId +
-          ":::" +
-          userMessage.message +
-          ":::" +
-          userMessage.dateTime
-      );
-
       this.dataSer.addUserMessage(userMessage).subscribe(data => {
         this.userMessages = this.userMessages.concat(data);
-        this.content = "";
+        this.message = "";
       });
     }
   }
 
   selectUser($event) {
-    console.log($event);
     var index = $event - 1;
     this.user.userId = this.users[index].id; //userId
+    this.user.userName = this.users[index].name; //使用者
     this.user.imageUrl = this.users[index].imageUrl; //imageUrl
   }
 }

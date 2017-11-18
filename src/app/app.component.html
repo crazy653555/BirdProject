@@ -13,7 +13,10 @@
             </select>
           </span>
 
-          <input type="text" class="form-control" placeholder="發生了什麼事?" [(ngModel)]="content" (keyup.enter)="addMessage()">
+          <input type="text" class="form-control" placeholder="發生了什麼事?" [(ngModel)]="message">
+
+          <input type="button" class="text-info" value="送出" (click)="addMessage()">
+
         </div>
       </div>
 
@@ -22,7 +25,9 @@
 
           <img class="rounded-circle feed-avatar" [src]="item.imageUrl">
           <div class="feed-post">
-            <h5>{{item.dateTime | date:'yyyy-MM-dd HH:mm'}}</h5>
+            <h5>{{item.userName}}
+              <small> @chichen.com.tw - {{item.dateTime | date:'yyyy-MM-dd HH:mm'}}</small>
+            </h5>
             <p>{{item.message}}</p>
           </div>
           <div class="action-list">
