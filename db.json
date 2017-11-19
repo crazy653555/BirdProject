@@ -19,100 +19,60 @@
   "users": [
     {
       "id": 1,
-      "name": "avdelilahwongon",
+      "name": "大頭媽",
       "imageUrl": "./assets/img/delilahwong-ig.png"
     },
     {
       "id": 2,
-      "name": "eason",
+      "name": "清源",
       "imageUrl": "./assets/img/eason-ig.png"
     },
     {
       "id": 3,
-      "name": "yanlinchou",
+      "name": "小綠",
       "imageUrl": "./assets/img/yanlinchou-ig.png"
     }
   ],
   "userMessage": [
     {
       "userId": 1,
-      "userName": "avdelilahwongon",
+      "userName": "大頭媽",
       "imageUrl": "./assets/img/delilahwong-ig.png",
       "message": "今天有鳥聚喔",
-      "dateTime": "Sat Nov 18 2017 14:11:49 GMT+0800 (CST)",
+      "dateTime": "Sun Nov 19 2017 18:27:07 GMT+0800 (CST)",
       "id": 1
     },
     {
       "userId": 2,
-      "userName": "eason",
+      "userName": "清源",
       "imageUrl": "./assets/img/eason-ig.png",
-      "message": "是喔",
-      "dateTime": "Sat Nov 18 2017 14:15:37 GMT+0800 (CST)",
+      "message": "什麼時候 我也要去？",
+      "dateTime": "Sun Nov 19 2017 18:27:21 GMT+0800 (CST)",
       "id": 2
     },
     {
       "userId": 3,
-      "userName": "yanlinchou",
+      "userName": "小綠",
       "imageUrl": "./assets/img/yanlinchou-ig.png",
-      "message": "要不要一起來？",
-      "dateTime": "Sat Nov 18 2017 14:33:48 GMT+0800 (CST)",
+      "message": "下禮拜六晚上五點開始喔",
+      "dateTime": "Sun Nov 19 2017 18:27:32 GMT+0800 (CST)",
       "id": 3
     },
     {
       "userId": 2,
-      "userName": "eason",
+      "userName": "清源",
       "imageUrl": "./assets/img/eason-ig.png",
-      "message": "因該可以喔",
-      "dateTime": "Sat Nov 18 2017 14:34:36 GMT+0800 (CST)",
+      "message": "好喔 我在看我能不能過去",
+      "dateTime": "Sun Nov 19 2017 18:27:47 GMT+0800 (CST)",
       "id": 4
     },
     {
-      "userId": "",
-      "userName": "",
-      "imageUrl": "",
-      "message": "faf",
-      "dateTime": "Sat Nov 18 2017 14:36:34 GMT+0800 (CST)",
-      "id": 5
-    },
-    {
       "userId": 3,
-      "userName": "yanlinchou",
+      "userName": "小綠",
       "imageUrl": "./assets/img/yanlinchou-ig.png",
-      "message": "今天下雨天喔",
-      "dateTime": "Sat Nov 18 2017 14:40:00 GMT+0800 (CST)",
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "userName": "eason",
-      "imageUrl": "./assets/img/eason-ig.png",
-      "message": "ＯＫ",
-      "dateTime": "Sat Nov 18 2017 14:40:08 GMT+0800 (CST)",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "userName": "avdelilahwongon",
-      "imageUrl": "./assets/img/delilahwong-ig.png",
-      "message": "一人隻雞翅膀",
-      "dateTime": "Sat Nov 18 2017 14:41:44 GMT+0800 (CST)",
-      "id": 8
-    },
-    {
-      "userId": 2,
-      "userName": "eason",
-      "imageUrl": "./assets/img/eason-ig.png",
-      "message": "兩個人的話呢？",
-      "dateTime": "Sat Nov 18 2017 14:42:01 GMT+0800 (CST)",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "userName": "avdelilahwongon",
-      "imageUrl": "./assets/img/delilahwong-ig.png",
-      "message": "4",
-      "dateTime": "Sat Nov 18 2017 14:42:19 GMT+0800 (CST)",
-      "id": 10
+      "message": "我負責買東西",
+      "dateTime": "Sun Nov 19 2017 22:16:49 GMT+0800 (CST)",
+      "id": 5
     }
   ]
 }

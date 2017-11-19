@@ -1,3 +1,5 @@
+
+/* main */
 #new-message {
   border-radius: 0.4rem 0.4rem 0 0;
   padding: 1em;
@@ -65,3 +67,15 @@ ul#feed li {
   padding: 1em 1em;
   border-bottom: 0.1rem solid #e5e5e5;
 }
+
+.title-img{
+  margin-bottom:1rem;
+}
+
+#new-message img{
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* main end */

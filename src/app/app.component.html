@@ -1,49 +1,46 @@
 <div class="container">
   <section>
-    <h1>Input</h1>
-
     <div class="card">
 
       <div id="new-message">
+        <div class="title-img text-center">
+          <img class="rounded-circle" [src]="user.imageUrl">
+        </div>
+
+        <select class="form-control" (change)="selectUser($event.target.value)">
+          <option value="">--Select--</option>
+          <option *ngFor="let user of users" [value]="user.id">{{ user.name}}</option>
+        </select>
+
         <div class="input-group">
-          <span class="input-group-addon">
-            <select class="form-control" (change)="selectUser($event.target.value)">
-              <option value="">--Select--</option>
-              <option *ngFor="let user of users" [value]="user.id">{{ user.name}}</option>
-            </select>
-          </span>
-
           <input type="text" class="form-control" placeholder="發生了什麼事?" [(ngModel)]="message">
-
-          <input type="button" class="text-info" value="送出" (click)="addMessage()">
-
+          <input type="button" class="btn btn-info" value="送出" (click)="addMessage()">
         </div>
       </div>
 
       <ul id="feed" class="list-unstyled">
         <li *ngFor="let item of userMessages">
-
           <img class="rounded-circle feed-avatar" [src]="item.imageUrl">
           <div class="feed-post">
             <h5>{{item.userName}}
-              <small> @chichen.com.tw - {{item.dateTime | date:'yyyy-MM-dd HH:mm'}}</small>
+              <small> - {{item.dateTime | date:'shortTime'}}</small>
             </h5>
             <p>{{item.message}}</p>
           </div>
-          <div class="action-list">
+          <!-- <div class="action-list">
             <a href="#" data-toggle="tooltip" data-placement="bottom" title="回覆">
-              <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+              <span class="material-icons">redo</span>
               <span class="retweet-count">107</span>
             </a>
             <a href="#" data-toggle="tooltip" data-placement="bottom" title="轉推">
-              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+              <span class="material-icons">autorenew</span>
               <span class="retweet-count">66</span>
             </a>
             <a href="#" data-toggle="tooltip" data-placement="bottom" title="棒">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              <span class="material-icons">star_rate</span>
               <span class="retweet-count">203</span>
             </a>
-          </div>
+          </div> -->
         </li>
       </ul>
 
