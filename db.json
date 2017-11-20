@@ -66,72 +66,68 @@
       "id": 10,
       "name": "索爾",
       "imageUrl": "./assets/img/索爾.png"
+    },
+    {
+      "id": 11,
+      "name": "拉吉歐",
+      "imageUrl": "./assets/img/拉吉歐.png"
+    },
+    {
+      "id": 12,
+      "name": "花豆",
+      "imageUrl": "./assets/img/花豆.png"
+    },
+    {
+      "id": 13,
+      "name": "黃豆",
+      "imageUrl": "./assets/img/黃豆.png"
+    },
+    {
+      "id": 14,
+      "name": "紅豆",
+      "imageUrl": "./assets/img/紅豆.png"
     }
   ],
   "userMessage": [
     {
-      "userId": 6,
-      "userName": "翁來雞",
-      "imageUrl": "./assets/img/翁來雞.png",
-      "message": "哈嚕各位 最近好嗎?",
-      "dateTime": "Mon Nov 20 2017 16:23:38 GMT+0800 (台北標準時間)",
+      "userId": 11,
+      "userName": "拉吉歐",
+      "imageUrl": "./assets/img/拉吉歐.png",
+      "message": "我是歐吉拉",
+      "dateTime": "Mon Nov 20 2017 20:33:10 GMT+0800 (CST)",
       "id": 1
-    },
-    {
-      "userId": 5,
-      "userName": "翁大頭",
-      "imageUrl": "./assets/img/翁大頭.png",
-      "message": "小跟班 你出現拉 哥好想你啊?",
-      "dateTime": "Mon Nov 20 2017 16:24:09 GMT+0800 (台北標準時間)",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "userName": "芒果",
-      "imageUrl": "./assets/img/芒果.png",
-      "message": "嗨 翁來 上面過的還好嗎?",
-      "dateTime": "Mon Nov 20 2017 16:24:28 GMT+0800 (台北標準時間)",
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "userName": "布丁",
-      "imageUrl": "./assets/img/布丁.png",
-      "message": "一人一隻雞翅膀",
-      "dateTime": "Mon Nov 20 2017 17:19:43 GMT+0800 (台北標準時間)",
-      "id": 4
-    },
-    {
-      "userId": 5,
-      "userName": "翁大頭",
-      "imageUrl": "./assets/img/翁大頭.png",
-      "message": "蝦灰?",
-      "dateTime": "Mon Nov 20 2017 17:20:04 GMT+0800 (台北標準時間)",
-      "id": 5
-    },
-    {
-      "userId": 9,
-      "userName": "浩克",
-      "imageUrl": "./assets/img/浩克.png",
-      "message": "Sort the numbers in the array in descending order",
-      "dateTime": "Mon Nov 20 2017 17:20:32 GMT+0800 (台北標準時間)",
-      "id": 6
-    },
-    {
-      "userId": 4,
-      "userName": "草菇",
-      "imageUrl": "./assets/img/草菇.png",
-      "message": "gigigi 少女時代 gigigi",
-      "dateTime": "Mon Nov 20 2017 17:21:04 GMT+0800 (台北標準時間)",
-      "id": 7
     },
     {
       "userId": 7,
       "userName": "綿綿酱",
       "imageUrl": "./assets/img/綿綿酱.png",
-      "message": "哥是傳說",
-      "dateTime": "Mon Nov 20 2017 17:21:28 GMT+0800 (台北標準時間)",
-      "id": 8
+      "message": "嗨 花豆",
+      "dateTime": "Mon Nov 20 2017 20:33:23 GMT+0800 (CST)",
+      "id": 2
+    },
+    {
+      "userId": 5,
+      "userName": "翁大頭",
+      "imageUrl": "./assets/img/翁大頭.png",
+      "message": "我是老大",
+      "dateTime": "Mon Nov 20 2017 20:33:35 GMT+0800 (CST)",
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "userName": "草菇",
+      "imageUrl": "./assets/img/草菇.png",
+      "message": "要吃香菇媽",
+      "dateTime": "Mon Nov 20 2017 20:34:07 GMT+0800 (CST)",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "userName": "芒果",
+      "imageUrl": "./assets/img/芒果.png",
+      "message": "水果雞",
+      "dateTime": "Mon Nov 20 2017 20:34:44 GMT+0800 (CST)",
+      "id": 5
     }
   ]
 }
