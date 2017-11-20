@@ -73,9 +73,15 @@ ul#feed li {
 }
 
 #new-message img{
-  width: 30%;
+  width: 20%;
   display: inline-block;
   vertical-align: top;
 }
 
+/* 手機螢幕 */
+@media (max-width: 34em) {
+  #new-message img{
+    width: 30%;
+  }
+}
 /* main end */
