@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DataService } from './data.service';
+import { OrderPipePipe } from './order-pipe.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OrderPipePipe
   ],
   imports: [
     BrowserModule,

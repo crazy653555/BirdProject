@@ -24,7 +24,7 @@
         </div>
 
       <ul id="feed" class="list-unstyled">
-        <li *ngFor="let item of userMessages">
+        <li *ngFor="let item of userMessages | orderPipe : true">
           <img class="rounded-circle feed-avatar" [src]="item.imageUrl">
           <div class="feed-post">
             <h5>{{item.userName}}
