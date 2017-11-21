@@ -33,17 +33,14 @@ export class AppComponent implements OnInit {
     if (this.isSelect && this.message) {
       let userMessage: UserMessage = {
         birdId: this.user.birdId,
-        // userName:this.user.userName,
-        // imageUrl: this.user.imageUrl,
         message: this.message
-        // dateTime: Date().toString()
       };
 
       this.dataSer.addUserMessage(userMessage).subscribe(data => {
+        this.message = "";
         this.dataSer
           .getUserMessage()
           .subscribe(data => (this.userMessages = data));
-        this.message = "";
       });
     }
   }

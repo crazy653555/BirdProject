@@ -5,8 +5,8 @@ import { UserMessage } from './user-message';
 @Injectable()
 export class DataService {
 
-  apiUsers = "http://localhost:11053/api/Users";
-  apiUserMessage = "http://localhost:11053/api/BirdMessages";
+  apiUsers = "http://birdprojectapi20171121042818.azurewebsites.net/api/Users";
+  apiUserMessage = "http://birdprojectapi20171121042818.azurewebsites.net/api/BirdMessages";
 
 
   constructor(private http: HttpClient) {}
