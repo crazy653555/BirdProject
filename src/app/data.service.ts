@@ -5,7 +5,7 @@ import { UserMessage } from './user-message';
 @Injectable()
 export class DataService {
 
-  apiUsers = "http://localhost:3000/users";
+  apiUsers = "http://localhost:2673/api/users";
   apiUserMessage = "http://localhost:3000/userMessage";
 
 
