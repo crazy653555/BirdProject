@@ -1,5 +1,6 @@
 <div class="container">
   <section>
+
     <div class="card">
 
       <div id="new-message">
@@ -11,7 +12,7 @@
             <div class="input-group-btn">
               <select class="btn btn-info dropdown-toggle" (change)="selectUser($event.target.value)">
                 <option class="dropdown-item text-light"><i class="material-icons"></i></option>
-                <option *ngFor="let user of users" [value]="user.id" class="dropdown-item text-light">{{ user.name}}</option>
+                <option *ngFor="let user of users" [value]="user.birdId" class="dropdown-item text-light">{{ user.name}}</option>
               </select>
             </div>
 
@@ -27,7 +28,7 @@
         <li *ngFor="let item of userMessages | orderPipe : true">
           <img class="rounded-circle feed-avatar" [src]="item.imageUrl">
           <div class="feed-post">
-            <h5>{{item.userName}}
+            <h5>{{item.name}}
               <small> - {{item.dateTime | date:'shortTime'}}</small>
             </h5>
             <p>{{item.message}}</p>

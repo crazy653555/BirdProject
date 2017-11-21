@@ -9,7 +9,7 @@ export class OrderPipePipe implements PipeTransform {
   transform(value: any[], type: boolean): any {
 
     if(type){
-      value.sort(function(a, b){return b.id-a.id})
+      value.sort(function(a, b){return b.Id-a.Id})
     }
 
     return value;

@@ -1,7 +1,10 @@
 export interface UserMessage {
-  userId:string;
-  userName:string;
-  imageUrl:string;
+  birdId:string;
+  // userName:string;
+  // imageUrl:string;
   message:string;
-  dateTime:string
+  // dateTime:string
+
 }
+
+

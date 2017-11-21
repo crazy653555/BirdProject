@@ -13,10 +13,11 @@ export class AppComponent implements OnInit {
   userMessages: any[] = [];
   users;
   user = {
-    userId: "",
-    userName:"",
+    birdId: "",
+    userName: "",
     imageUrl: ""
   };
+  isSelect: boolean = false;
 
   constructor(private dataSer: DataService) {}
 
@@ -29,26 +30,33 @@ export class AppComponent implements OnInit {
   //加入訊息
   addMessage() {
     //如果有值
-    if (this.message) {
+    if (this.isSelect && this.message) {
       let userMessage: UserMessage = {
-        userId: this.user.userId,
-        userName:this.user.userName,
-        imageUrl: this.user.imageUrl,
-        message: this.message,
-        dateTime: Date().toString()
+        birdId: this.user.birdId,
+        // userName:this.user.userName,
+        // imageUrl: this.user.imageUrl,
+        message: this.message
+        // dateTime: Date().toString()
       };
 
       this.dataSer.addUserMessage(userMessage).subscribe(data => {
-        this.userMessages = this.userMessages.concat(data);
+        this.dataSer
+          .getUserMessage()
+          .subscribe(data => (this.userMessages = data));
         this.message = "";
       });
     }
   }
 
-  selectUser($event) {
-    var index = $event - 1;
-    this.user.userId = this.users[index].id; //userId
-    this.user.userName = this.users[index].name; //使用者
-    this.user.imageUrl = this.users[index].imageUrl; //imageUrl
+  //選擇使用者
+  selectUser(birdId) {
+    if (birdId) {
+      this.user = this.users.find(item => {
+        this.isSelect = true;
+        return item.birdId == birdId;
+      });
+    } else {
+      this.isSelect = false;
+    }
   }
 }
