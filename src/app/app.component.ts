@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
     imageUrl: ""
   };
   isSelect: boolean = false;
+  disabledSend: boolean = false;
 
   constructor(private dataSer: DataService) {}
 
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit {
   addMessage() {
     //如果有值
     if (this.isSelect && this.message) {
+      this.disabledSend = true;
       let userMessage: UserMessage = {
         birdId: this.user.birdId,
         message: this.message
@@ -38,9 +40,10 @@ export class AppComponent implements OnInit {
 
       this.dataSer.addUserMessage(userMessage).subscribe(data => {
         this.message = "";
-        this.dataSer
-          .getUserMessage()
-          .subscribe(data => (this.userMessages = data));
+        this.dataSer.getUserMessage().subscribe(data => {
+          this.userMessages = data;
+          this.disabledSend = false;
+        });
       });
     }
   }
@@ -58,9 +61,7 @@ export class AppComponent implements OnInit {
   }
 
   //重新載入訊息
-  reflashMessage(){
-    this.dataSer
-    .getUserMessage()
-    .subscribe(data => (this.userMessages = data));
+  reflashMessage() {
+    this.dataSer.getUserMessage().subscribe(data => (this.userMessages = data));
   }
 }
