@@ -56,4 +56,11 @@ export class AppComponent implements OnInit {
       this.isSelect = false;
     }
   }
+
+  //重新載入訊息
+  reflashMessage(){
+    this.dataSer
+    .getUserMessage()
+    .subscribe(data => (this.userMessages = data));
+  }
 }

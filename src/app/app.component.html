@@ -4,32 +4,48 @@
     <div class="card">
 
       <div id="new-message">
-        <div *ngIf="user.imageUrl" class="title-img text-center bg-light">
+
+        <div class="input-group">
+
+          <select class="btn btn-info dropdown-toggle" (change)="selectUser($event.target.value)">
+            <option class="dropdown-item text-light">
+              <i class="material-icons"></i>
+            </option>
+            <option *ngFor="let user of users" [value]="user.birdId" class="dropdown-item text-light">{{ user.name}}</option>
+          </select>
+
+        </div>
+
+
+        <div class="title-img text-center bg-light">
           <img class="rounded-circle" [src]="user.imageUrl">
         </div>
 
+        <!-- 輸入文字區 -->
         <div class="input-group">
-            <div class="input-group-btn">
-              <select class="btn btn-info dropdown-toggle" (change)="selectUser($event.target.value)">
-                <option class="dropdown-item text-light"><i class="material-icons"></i></option>
-                <option *ngFor="let user of users" [value]="user.birdId" class="dropdown-item text-light">{{ user.name}}</option>
-              </select>
-            </div>
+          <span class="input-group-btn">
+            <button class="btn btn-info" type="button" (click)="reflashMessage()">
+              <i class="material-icons">autorenew</i>
+            </button>
+          </span>
+          <input type="text" class="form-control" placeholder="發生了什麼事?" [(ngModel)]="message">
 
-            <input type="text" class="form-control" placeholder="發生了什麼事?" [(ngModel)]="message">
-
-            <span class="input-group-btn">
-              <button class="btn btn-info" type="button"  (click)="addMessage()"><i class="material-icons">send</i></button>
-            </span>
-          </div>
+          <span class="input-group-btn">
+            <button class="btn btn-info" type="button" (click)="addMessage()">
+              <i class="material-icons">send</i>
+            </button>
+          </span>
         </div>
+        <!-- 輸入文字區 end -->
+
+      </div>
 
       <ul id="feed" class="list-unstyled">
         <li *ngFor="let item of userMessages | orderPipe : true">
           <img class="rounded-circle feed-avatar" [src]="item.imageUrl">
           <div class="feed-post">
             <h5>{{item.name}}
-              <small> - {{item.dateTime | date:'shortTime'}}</small>
+              <small> - {{item.dateTime | date:'HH:mm'}}</small>
             </h5>
             <p>{{item.message}}</p>
           </div>
