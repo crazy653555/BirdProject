@@ -8,9 +8,12 @@ export class DataService {
   // apiUsers = "http://localhost:11053/api/Users";
   // apiBirdMessage = "http://localhost:11053/api/birdmessages";
 
+  // urlImage = "http://localhost:11053/assets/img/";
+
   //正式機
-   apiUsers = "https://birdprojectapi20171121042818.azurewebsites.net/api/Users";
-   apiBirdMessage = "https://birdprojectapi20171121042818.azurewebsites.net/api/BirdMessages";
+  apiUsers = "https://birdprojectapi20171121042818.azurewebsites.net/api/Users";
+  apiBirdMessage = "https://birdprojectapi20171121042818.azurewebsites.net/api/BirdMessages";
+  urlImage = "https://birdprojectapi20171121042818.azurewebsites.net/assets/img/";
 
   constructor(private http: HttpClient) {}
 

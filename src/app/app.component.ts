@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "./data.service";
+import { DataService } from './data.service';
 import { UserMessage } from "./user-message";
 import { getLocaleDateFormat } from "@angular/common/src/i18n/locale_data_api";
 
@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
   };
   isSelect: boolean = false;
   disabledSend: boolean = false;
+  urlImage = this.dataSer.urlImage;
+
 
   constructor(private dataSer: DataService) {}
 
